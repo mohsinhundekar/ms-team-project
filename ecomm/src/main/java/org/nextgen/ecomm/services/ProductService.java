@@ -19,5 +19,4 @@ public class ProductService {
 
 		return productMap.get(productId);
 	}
-
 }
