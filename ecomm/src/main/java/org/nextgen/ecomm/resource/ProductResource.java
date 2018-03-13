@@ -1,4 +1,4 @@
-package org.nextgen.ecomm;
+package org.nextgen.ecomm.resource;
 
 import java.util.List;
 
