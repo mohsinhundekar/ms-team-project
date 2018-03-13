@@ -2,6 +2,8 @@ package org.nextgen.ecomm.resource;
 
 import java.util.List;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -22,24 +24,26 @@ public class ProductResource {
 	
 	private ProductService productService = new ProductService();
 	
-	
+	@PermitAll
 	@GET
 	public List<Product> getProducts() {
 		return productService.getAllProducts();
 	}
 	
-	
+	@PermitAll
 	@GET
 	@Path("/{productId}")
 	public Product getProduct(@PathParam( "productId")  String productId) {
 		return productService.getProduct(productId);
 	}
 	
+	@RolesAllowed("ADMIN")
 	@POST
 	public Product addProduct(Product product) {
 		return productService.addProduct(product);
 	}
 	
+	@RolesAllowed("ADMIN")
 	@PUT
 	@Path("/{productId}")
 	public Product updateProduct(@PathParam("productId") String productId, Product product) {
@@ -47,6 +51,7 @@ public class ProductResource {
 		return productService.updateProduct(product);
 	}
 	
+	@RolesAllowed("ADMIN")
 	@DELETE
 	@Path("/{productId}")
 	public void deleteProduct(@PathParam("productId") String productId) {
