@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.nextgen.ecomm.model.Cart;
 import org.nextgen.ecomm.model.Product;
 import org.nextgen.ecomm.model.Sku;
 
@@ -12,6 +13,7 @@ public class DataBaseService {
 
 	
 	private static Map<String, Product> productMap = new HashMap<String, Product>();
+	private static Map<Long,Cart> cartMap= new HashMap<Long, Cart>();
 	
 	
 	public static Map<String, Product> getProductMap() {
@@ -43,5 +45,8 @@ public class DataBaseService {
 		
 		return productMap;
 		
+	}
+	public static Map<Long, Cart> getCart() {
+		return cartMap;
 	}
 }
