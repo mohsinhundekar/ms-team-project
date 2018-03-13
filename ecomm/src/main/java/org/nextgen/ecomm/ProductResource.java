@@ -3,7 +3,10 @@ package org.nextgen.ecomm;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -27,9 +30,30 @@ public class ProductResource {
 	
 	
 	@GET
-	@Path("{productId}")
+	@Path("/{productId}")
 	public Product getProduct(@PathParam( "productId")  String productId) {
-		
 		return productService.getProduct(productId);
 	}
+	
+	@POST
+	public Product addProduct(Product product) {
+		return productService.addProduct(product);
+	}
+	
+	@PUT
+	@Path("/{productId}")
+	public Product updateProduct(@PathParam("productId") String productId, Product product) {
+		product.setProductId(productId);
+		return productService.updateProduct(product);
+	}
+	
+	@DELETE
+	@Path("/{productId}")
+	public void deleteProduct(@PathParam("productId") String productId) {
+		 productService.removeMessage(productId);
+	}
+	
+	
+	
+	
 }
