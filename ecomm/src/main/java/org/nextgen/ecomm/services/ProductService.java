@@ -68,7 +68,7 @@ public class ProductService {
 		return product;
 	}
 	
-	public Product removeMessage(String productId) {
+	public Product removeProduct(String productId) {
 		return productMap.remove(productId);
 		
 	}

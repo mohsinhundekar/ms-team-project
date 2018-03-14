@@ -1,5 +1,6 @@
 package org.nextgen.ecomm.resource;
 
+import javax.annotation.security.PermitAll;
 import javax.websocket.server.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -20,12 +21,13 @@ import org.nextgen.ecomm.utils.ValidationUtil;
 public class CartResource {
 
 	private CartService cartService = new CartService();
-
+	@PermitAll
 	@GET
 	public Cart getCart() {
 		return cartService.getCart();
 	}
-
+	
+	@PermitAll
 	@POST
 	public Cart addItemToCart(AddToCartRequest addtoCartRequest) {
 
@@ -35,11 +37,13 @@ public class CartResource {
 		return null;
 	}
 	
+	@PermitAll
 	@DELETE
 	public Cart deleteCart() {
 		return cartService.deleteCart();
 	}
 	
+	@PermitAll
 	@DELETE
 	@Path("/{cartItemId}")
 	public Cart deleteItemFromCart(@PathParam("cartItemId") String cartItemId) {
