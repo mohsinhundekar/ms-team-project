@@ -13,7 +13,7 @@ public class Product {
 
 	private String productDescription;
 
-	private boolean activeFlag;
+	private boolean isActive;
 	
 	private List<Sku> childSkus;
 
@@ -21,13 +21,13 @@ public class Product {
 		
 	}
 	
-	public Product(String productId, String productName, String productDescription, boolean activeFlag,
+	public Product(String productId, String productName, String productDescription, boolean isActive,
 			List<Sku> childSkus) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.productDescription = productDescription;
-		this.activeFlag = activeFlag;
+		this.isActive = isActive;
 		this.childSkus = childSkus;
 	}
 
@@ -55,13 +55,6 @@ public class Product {
 		this.productDescription = productDescription;
 	}
 
-	public boolean isActiveFlag() {
-		return activeFlag;
-	}
-
-	public void setActiveFlag(boolean activeFlag) {
-		this.activeFlag = activeFlag;
-	}
 
 	public List<Sku> getChildSkus() {
 		return childSkus;
@@ -71,6 +64,12 @@ public class Product {
 		this.childSkus = childSkus;
 	}
 
-	
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
 
 }

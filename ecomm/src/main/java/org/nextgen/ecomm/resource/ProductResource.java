@@ -12,6 +12,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.nextgen.ecomm.model.Product;
@@ -26,7 +27,11 @@ public class ProductResource {
 	
 	@PermitAll
 	@GET
-	public List<Product> getProducts() {
+	public List<Product> getProducts(@QueryParam ("active") String activeFlag) {
+		
+		if(activeFlag !=null) {
+			return productService.getProductsBasedOnActiveFlag(activeFlag);
+		}
 		return productService.getAllProducts();
 	}
 	

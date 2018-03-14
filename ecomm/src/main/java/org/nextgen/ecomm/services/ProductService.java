@@ -72,5 +72,16 @@ public class ProductService {
 		return productMap.remove(productId);
 		
 	}
+
+	public List<Product> getProductsBasedOnActiveFlag(String activeFlag) {
+		
+		List<Product> tempList=new ArrayList<Product>();
+		for(Product product :productMap.values()) {
+			if(String.valueOf(product.isActive()).equalsIgnoreCase(activeFlag)) {
+				tempList.add(product);
+			}
+		}
+		return tempList;
+	}
 	
 }
