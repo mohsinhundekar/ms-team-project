@@ -15,6 +15,7 @@ public class DataBaseService {
 	private static Map<String, Product> productMap = new HashMap<String, Product>();
 	private static Map<Long,Cart> cartMap= new HashMap<Long, Cart>();
 	
+	private static Map<String, String> tokenCartMap= new HashMap<String, String>();
 	
 	public static Map<String, Product> getProductMap() {
 		
@@ -48,5 +49,10 @@ public class DataBaseService {
 	}
 	public static Map<Long, Cart> getCart() {
 		return cartMap;
+	}
+	
+	public static Map<String,String> getTokenCartMap(){
+		return tokenCartMap;
+		
 	}
 }
