@@ -1,0 +1,22 @@
+{
+	"cartId": "",
+	"totalPrice": "",
+	"cartItems": [
+		{
+			"itemId": "",
+			"itemName": "",
+			"itemDescription": "",
+			"itemUnitPrice": "",
+			"itemQty": "",
+			"itemSubTotal": ""
+		},
+		{
+			"itemId": "",
+			"itemName": "",
+			"itemDescription": "",
+			"itemUnitPrice": "",
+			"itemQty": "",
+			"itemSubTotal": ""
+		}
+	]
+}

@@ -1,0 +1,162 @@
+product list   
+
+
+/ecom/products
+
+GET - Mohsin  --> data layer using HashMap , create Git Hu repository 
+
+POST - Haseena ---> implement authentication , only specific user should be able add
+
+
+
+
+
+/ecom/products/{productId}  - GET,PUT - Mohsin
+
+/ecom/products/{productId}/skus - GET,
+/ecom/products/{productId}/skus/{skuId}
+
+
+
+
+All Active products:
+ GET     /ecom/products?active=true
+
+Get,Add,Update,Delete -->product
+Get,Add,Update,Delete -->sku
+
+[
+  {
+    "productId": "1",
+    "productName": "",
+    "productDescription": "",
+    "activeFlag": "",
+    "href": "",
+    "childSkus": [
+      {
+        "SkuId": "100",
+        "skuName": "",
+        "skudescription": "",
+        "activeFlag": "",
+        "price": "10.00",
+		"qtyAvailable":"10",
+        "href": ""
+      },
+      {
+        "SkuId": "101",
+        "skuName": "",
+        "skudescription": "",
+        "price": "10.00",
+		"qtyAvailable":"14",
+        "activeFlag": "",
+        "href": ""
+      }
+    ]
+  },
+  {
+    "productId": "2",
+    "productName": "",
+    "productDescription": "",
+    "activeFlag": "",
+    "href": "",
+    "childSkus": [
+      {
+        "SkuId": "100",
+        "skuName": "",
+        "skudescription": "",
+        "price": "10.00",
+        "activeFlag": "",
+		"qtyAvailable":"10",
+        "href": ""
+      },
+      {
+        "SkuId": "101",
+        "skuName": "",
+        "skudescription": "",
+        "price": "10.00",
+        "activeFlag": "",
+		"qtyAvailable":"6",
+        "href": ""
+      }
+    ]
+  }
+]
+
+
+
+
+
+Cart Operations:
+
+
+GET , DELETE POST the CART  /ecom/cart
+
+ GET /ecom/cart/{cartId}
+
+ 
+ /ecom/cart/
+ 
+
+ 
+
+request Payload:
+
+{
+"skuId":"",
+"productId":"",
+"qty":"",
+}
+
+
+Cart Object 
+{
+  "cartId": "",
+  "totalPrice": "",
+  "cartItems": [
+    {
+      "itemId": "",
+      "itemName": "",
+      "itemDescription": "",
+      "itemUnitPrice": "",
+      "itemQty": "",
+      "itemSubTotal": ""
+    },
+    {
+      "itemId": "",
+      "itemName": "",
+      "itemDescription": "",
+      "itemUnitPrice": "",
+      "itemQty": "",
+      "itemSubTotal": ""
+    }
+  ]
+}
+
+ DELETE/ADD item to the cart
+ 
+ /ecom/cart/{cartId}/cartItems
+ 
+ /ecom/cart/{cartId}/cartItems/{cartItemId}
+ 
+ request Payload for add product
+ 
+	{
+      "itemId": "",
+      "itemQty": "",
+    }
+ 
+
+
+Place the Order (make the cart Persistent)
+
+request Payload
+
+{
+	"cartId":""
+}
+
+
+
+
+
+
