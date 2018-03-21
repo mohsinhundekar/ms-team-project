@@ -1,8 +1,5 @@
-package org.nextgen.ecomm.model;
+package org.nextgen.ecomm.sku;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class Sku {
 
 	private String skuId;
@@ -16,20 +13,6 @@ public class Sku {
 	private double skuPrice;
 
 	private long skuQtyAvailable;
-
-	public Sku() {
-	}
-
-	public Sku(String skuId, String skuName, String skuDescription, boolean activeFlag, double skuPrice,
-			long skuQtyAvailable) {
-		super();
-		this.skuId = skuId;
-		this.skuName = skuName;
-		this.skuDescription = skuDescription;
-		this.activeFlag = activeFlag;
-		this.skuPrice = skuPrice;
-		this.skuQtyAvailable = skuQtyAvailable;
-	}
 
 	public String getSkuId() {
 		return skuId;
@@ -78,5 +61,4 @@ public class Sku {
 	public void setSkuQtyAvailable(long skuQtyAvailable) {
 		this.skuQtyAvailable = skuQtyAvailable;
 	}
-
 }

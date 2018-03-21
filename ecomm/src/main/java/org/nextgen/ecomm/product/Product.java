@@ -1,13 +1,14 @@
-package org.nextgen.ecomm.model;
+package org.nextgen.ecomm.product;
 
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import org.nextgen.ecomm.sku.Sku;
+import org.springframework.data.annotation.Id;
 
-@XmlRootElement
 public class Product {
-
-	private String productId;
+	
+	@Id
+	private String id;
 
 	private String productName;
 
@@ -15,28 +16,12 @@ public class Product {
 
 	private boolean isActive;
 	
-	private List<Sku> childSkus;
-
-	public Product() {
-		
-	}
-	
-	public Product(String productId, String productName, String productDescription, boolean isActive,
-			List<Sku> childSkus) {
-		super();
-		this.productId = productId;
-		this.productName = productName;
-		this.productDescription = productDescription;
-		this.isActive = isActive;
-		this.childSkus = childSkus;
-	}
-
 	public String getProductId() {
-		return productId;
+		return id;
 	}
 
 	public void setProductId(String productId) {
-		this.productId = productId;
+		this.id = productId;
 	}
 
 	public String getProductName() {
@@ -55,6 +40,13 @@ public class Product {
 		this.productDescription = productDescription;
 	}
 
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
 
 	public List<Sku> getChildSkus() {
 		return childSkus;
@@ -64,12 +56,6 @@ public class Product {
 		this.childSkus = childSkus;
 	}
 
-	public boolean isActive() {
-		return isActive;
-	}
-
-	public void setActive(boolean isActive) {
-		this.isActive = isActive;
-	}
-
+	private List<Sku> childSkus;
+	
 }
