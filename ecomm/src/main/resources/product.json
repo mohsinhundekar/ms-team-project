@@ -1,55 +1,65 @@
 [
 	{
-		"productId": "1",
-		"productName": "",
-		"productDescription": "",
-		"activeFlag": "",
-		"href": "",
+		"productId": "prod001",
+		"productName": "apple Iphone 6s",
+		"productDescription": "apple Iphone 6s Description",
+		"activeFlag": true,
 		"childSkus": [
 			{
-				"SkuId": "100",
-				"skuName": "",
-				"skudescription": "",
-				"activeFlag": "",
-				"price": "10.00",
-				"qtyAvailable": "10",
-				"href": ""
+				"skuId": "sku001",
+				"skuName": "apple Iphone 6s Black 32 GB",
+				"skuDescription": "apple Iphone 6s Black 32 GB Descrption",
+				"activeFlag": true,
+				"skuPrice": 499.00,
+				"skuQtyAvailable": 99
 			},
 			{
-				"SkuId": "101",
-				"skuName": "",
-				"skudescription": "",
-				"price": "10.00",
-				"qtyAvailable": "14",
-				"activeFlag": "",
-				"href": ""
+				"skuId": "sku002",
+				"skuName": "apple Iphone 6s Black 64 GB",
+				"skuDescription": "apple Iphone 6s Black 64 GB Descrption",
+				"activeFlag": true,
+				"skuPrice": 599.00,
+				"skuQtyAvailable": 99
+			},
+			{
+				"skuId": "sku003",
+				"skuName": "apple Iphone 6s Gold 64 GB",
+				"skuDescription": "apple Iphone 6s Gold 64 GB Descrption",
+				"activeFlag": true,
+				"skuPrice": 599.00,
+				"skuQtyAvailable": 99
 			}
 		]
 	},
 	{
-		"productId": "2",
-		"productName": "",
-		"productDescription": "",
-		"activeFlag": "",
-		"href": "",
+		"productId": "prod002",
+		"productName": "apple Iphone X",
+		"productDescription": "apple Iphone X Description",
+		"activeFlag": true,
 		"childSkus": [
 			{
-				"SkuId": "100",
-				"skuName": "",
-				"skudescription": "",
-				"price": "10.00",
-				"activeFlag": "",
-				"qtyAvailable": "10",
-				"href": ""
+				"skuId": "sku004",
+				"skuName": "apple Iphone X Black 32 GB",
+				"skuDescription": "apple Iphone X Black 32 GB Descrption",
+				"activeFlag": true,
+				"skuPrice": 999.00,
+				"skuQtyAvailable": 99
 			},
 			{
-				"SkuId": "101",
-				"skuName": "",
-				"skudescription": "",
-				"price": "10.00",
-				"activeFlag": "",
-				"qtyAvailable": "6",
-				"href": ""
+				"skuId": "sku005",
+				"skuName": "apple Iphone X Black 64 GB",
+				"skuDescription": "apple Iphone X Black 64 GB Descrption",
+				"activeFlag": true,
+				"skuPrice": 999.00,
+				"skuQtyAvailable": 99
+			},
+			{
+				"skuId": "sku006",
+				"skuName": "apple Iphone X Gold 64 GB",
+				"skuDescription": "apple Iphone X Gold 64 GB Descrption",
+				"activeFlag": true,
+				"skuPrice": 999.00,
+				"skuQtyAvailable": 99
 			}
 		]
 	}

@@ -1,4 +1,4 @@
-package org.nextgen.ecomm;
+package org.nextgen.ecomm.product;
 
 import java.util.List;
 
@@ -8,8 +8,7 @@ import java.util.List;
 
 
 
-import org.nextgen.ecomm.product.Product;
-import org.nextgen.ecomm.product.ProductService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;

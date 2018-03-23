@@ -8,20 +8,20 @@ import org.springframework.data.annotation.Id;
 public class Product {
 	
 	@Id
-	private String id;
+	private String productId;
 
 	private String productName;
 
 	private String productDescription;
 
-	private boolean isActive;
+	private boolean activeFlag;
 	
 	public String getProductId() {
-		return id;
+		return productId;
 	}
 
 	public void setProductId(String productId) {
-		this.id = productId;
+		this.productId = productId;
 	}
 
 	public String getProductName() {
@@ -40,20 +40,20 @@ public class Product {
 		this.productDescription = productDescription;
 	}
 
-	public boolean isActive() {
-		return isActive;
-	}
-
-	public void setActive(boolean isActive) {
-		this.isActive = isActive;
-	}
-
 	public List<Sku> getChildSkus() {
 		return childSkus;
 	}
 
 	public void setChildSkus(List<Sku> childSkus) {
 		this.childSkus = childSkus;
+	}
+
+	public boolean isActiveFlag() {
+		return activeFlag;
+	}
+
+	public void setActiveFlag(boolean activeFlag) {
+		this.activeFlag = activeFlag;
 	}
 
 	private List<Sku> childSkus;
