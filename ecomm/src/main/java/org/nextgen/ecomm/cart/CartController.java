@@ -28,9 +28,9 @@ public class CartController {
 		// return null;
 	}
 
-	@RequestMapping(method = RequestMethod.DELETE)
-	public Cart deleteCart() {
-		return cartService.deleteCart();
+	@RequestMapping(value="/{cartId}",method = RequestMethod.DELETE)
+	public Cart deleteCart(@PathVariable String cartId) {
+		return cartService.deleteCart(cartId);
 	}
 
 	@RequestMapping(value = "{/cartItemId}", method = RequestMethod.DELETE)

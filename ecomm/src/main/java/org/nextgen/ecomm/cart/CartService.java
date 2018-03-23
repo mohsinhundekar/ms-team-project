@@ -43,8 +43,9 @@ public class CartService {
 		return cartRepository.findOne(cartId);
 	}
 
-	public Cart deleteCart() {
-		// TODO Auto-generated method stub
+	public Cart deleteCart(String cartId) {
+		
+		cartRepository.delete(cartId);
 		return null;
 	}
 
