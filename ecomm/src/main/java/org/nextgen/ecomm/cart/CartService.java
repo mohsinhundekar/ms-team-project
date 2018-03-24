@@ -1,5 +1,6 @@
 package org.nextgen.ecomm.cart;
 
+import org.nextgen.ecomm.invetoryn.InventoryService;
 import org.nextgen.ecomm.tools.CartTools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,9 @@ public class CartService {
 	
 	@Autowired
 	private CartRepository cartRepository;
+	
+	@Autowired
+	private InventoryService inventoryService;
 	
 	@Autowired
 	private CartTools cartTools;
@@ -39,6 +43,8 @@ public class CartService {
 		cart.setCartTotal(cartTools.computeCartTotal(cart));
 		
 		cartRepository.save(cart);
+		inventoryService.updateInventory(skuId,productId,qty);
+		
 
 		return cartRepository.findOne(cartId);
 	}

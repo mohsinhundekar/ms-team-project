@@ -1,6 +1,14 @@
 package org.nextgen.ecomm.cart;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.nextgen.ecomm.exception.InventoryNotAvailableException;
+import org.nextgen.ecomm.invetoryn.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +21,9 @@ public class CartController {
 
 	@Autowired
 	private CartService cartService;
+	
+	@Autowired
+	private InventoryService inventoryService;
 
 	@RequestMapping(value="/{cartId}",method = RequestMethod.GET)
 	public Cart getCart(@PathVariable String cartId) {
@@ -22,10 +33,10 @@ public class CartController {
 	@RequestMapping(method = RequestMethod.POST)
 	public Cart addItemToCart(@RequestBody AddToCartRequest addToCartRequest) {
 
-		// if (ValidationUtil.isValidCartParameters()) {
-		return cartService.addItemToCart(addToCartRequest.getSkuId(), addToCartRequest.getProductId(), addToCartRequest.getQty(), addToCartRequest.getCartId());
-		// }
-		// return null;
+		 if (inventoryService.isInventoryAvailable(addToCartRequest)) {
+			 return cartService.addItemToCart(addToCartRequest.getSkuId(), addToCartRequest.getProductId(), addToCartRequest.getQty(), addToCartRequest.getCartId());
+		 }
+		 throw new InventoryNotAvailableException("No more inventory is available for sku "+addToCartRequest.getSkuId());
 	}
 
 	@RequestMapping(value="/{cartId}",method = RequestMethod.DELETE)
