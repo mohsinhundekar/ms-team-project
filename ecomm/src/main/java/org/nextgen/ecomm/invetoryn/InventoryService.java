@@ -23,11 +23,14 @@ public class InventoryService {
 	private long quantityAvailableInHand(AddToCartRequest addToCartRequest) {
 		Product product = productRepository.findOne(addToCartRequest.getProductId());
 
-		for (Sku sku : product.getChildSkus()) {
-			if (addToCartRequest.getSkuId().equals(sku.getSkuId())) {
-				return sku.getSkuQtyAvailable();
+		if(product != null) {
+			for (Sku sku : product.getChildSkus()) {
+				if (addToCartRequest.getSkuId().equals(sku.getSkuId())) {
+					return sku.getSkuQtyAvailable();
+				}
 			}
 		}
+		
 		return 0;
 	}
 
