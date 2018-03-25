@@ -1,6 +1,6 @@
 package org.nextgen.ecomm.cart;
 
-import org.nextgen.ecomm.invetoryn.InventoryService;
+import org.nextgen.ecomm.invetory.InventoryService;
 import org.nextgen.ecomm.tools.CartTools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package org.nextgen.ecomm.invetoryn;
+package org.nextgen.ecomm.invetory;
 
 import org.nextgen.ecomm.cart.AddToCartRequest;
 import org.nextgen.ecomm.product.Product;

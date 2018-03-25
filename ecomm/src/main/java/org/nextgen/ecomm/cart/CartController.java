@@ -1,7 +1,7 @@
 package org.nextgen.ecomm.cart;
 
 import org.nextgen.ecomm.exception.InventoryNotAvailableException;
-import org.nextgen.ecomm.invetoryn.InventoryService;
+import org.nextgen.ecomm.invetory.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
